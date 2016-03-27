@@ -1,6 +1,18 @@
 body {
-  background: #000;
+  background: rgba(120,110,110,0.89);
 }
-div.hero-unit > p {
-  color: #fff;
+.game {
+  border: 1px solid #000;
+  width: 150px;
+  margin: 25px 0px;
+}
+.game > .top-team {
+  border-bottom: thin solid #000;
+}
+.seed {
+  padding-right: 7px;
+  padding-left: 2px;
+}
+#round2 > .game {
+  display: inherit;
 }

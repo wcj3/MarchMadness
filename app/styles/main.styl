@@ -1,5 +1,41 @@
+//Google font
+//ADD COOL IMAGES AT TOP FOR EACH REGION
+//CSS Color for each school
+*
+  font-family 'Titillium Web', sans-serif
 body
-  background: white
-
-div.hero-unit > p
-  color: white
+  background rgba(105, 105, 105, 0.69)
+.game
+  border 1px solid black
+  width 190px
+  margin 30px 0px
+  position relative
+  background-color white
+#round1 > .game
+  margin-left: 15px
+  margin-top: 50px
+.seed
+  padding-right 10px
+  padding-left 4px
+.team
+  padding 5px 0
+.game > .top
+  border-bottom thin solid black
+.score
+  position absolute
+  right 4px
+//Sets connector for round 1
+#round1 > .game > .connector
+  border 1px solid black
+  border-left none
+  z-index -1
+  position absolute
+  height 120px
+  width 225px
+  display block
+  top 34px
+#round2 > .game
+  position absolute
+  left 249px
+  top 80px
+  z-index 1
