@@ -2,15 +2,35 @@
 //ADD COOL IMAGES AT TOP FOR EACH REGION
 //CSS Color for each school
 *
-  font-family 'Titillium Web', sans-serif
-body
+  font-family: 'Titillium Web', sans-serif
+#header
+  height 114px
+  width auto
+  background-color white
+//March Madness logo
+#madness
+  margin-left auto
+  margin-right auto
+  display block
+//Background color for bracket
+section#bracket
   background rgba(105, 105, 105, 0.69)
+#bracket > .top
+  position relative
+  display inline-block
+#round1
+  width 241px
+  margin 0
+  padding 0
+  position relative
+  display inline-block
 .game
   border 1px solid black
-  width 190px
+  width 200px
   margin 30px 0px
   position relative
   background-color white
+  border-radius 5px
 #round1 > .game
   margin-left: 15px
   margin-top: 50px
@@ -31,11 +51,25 @@ body
   z-index -1
   position absolute
   height 120px
-  width 225px
+  width 230px
   display block
   top 34px
 #round2 > .game
   position absolute
-  left 249px
-  top 80px
+  left 246px
+  top 81px
   z-index 1
+.winner
+  color green
+.loser
+  color red
+.win-icon
+  background url(http://localhost:9000/images/party-emoji.png)
+  height 24px
+  width 24px
+  background-size contain
+  background-repeat no-repeat
+  display inline-block
+  vertical-align middle
+  right 43px
+  position absolute

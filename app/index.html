@@ -16,83 +16,47 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.min.css"/>
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-<link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="scripts/controllers/MarchMadnessCtrl.js"></script>
   </head>
-  <body>
+  <body ng-app="MarchMadnessApp" ng-controller="MarchMadnessCtrl">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-<div id="test"></div>
-<section id="bracket">
-  <div class="top">
-    <section id="round1">
-      <div class="game">
-        <div class="top team"><span class="seed">1</span>Kansas<span class="score">100</span></div>
-        <div class="connector"></div>
-        <div class="bottom team"><span class="seed">16</span>Austin Peay<span class="score">80</span></div>
-      </div>
-      <div class="game">
-        <div class="top team"><span class="seed">8</span>Colorado <span class="score">100</span></div>
-        <div class="bottom team"><span class="seed">9</span>Connecticut <span class="score">90</span></div>
-      </div>
-      <div class="game">
-        <div class="top team"><span class="seed">5</span>Maryland<span class="score">100</span></div>
-        <div class="connector"></div>
-        <div class="bottom team"><span class="seed">12</span>South Dakota St.<span class="score">80</span></div>
-      </div>
-      <div class="game">
-        <div class="top team"><span class="seed">4</span>California <span class="score">100</span></div>
-        <div class="bottom team"><span class="seed">13</span>Hawaii <span class="score">90</span></div>
-      </div>
-      <div class="game">
-        <div class="top team"><span class="seed">6</span>Arizona<span class="score">100</span></div>
-        <div class="connector"></div>
-        <div class="bottom team"><span class="seed">11</span>Wichita State<span class="score">80</span></div>
-      </div>
-      <div class="game">
-        <div class="top team"><span class="seed">3</span>Miami<span class="score">100</span></div>
-        <div class="bottom team"><span class="seed">14</span>Buffalo <span class="score">90</span></div>
-      </div>
-      <div class="game">
-        <div class="top team"><span class="seed">7</span>Iowa<span class="score">100</span></div>
-        <div class="connector"></div>
-        <div class="bottom team"><span class="seed">10</span>Temple<span class="score">80</span></div>
-      </div>
-      <div class="game">
-        <div class="top team"><span class="seed">2</span>Villanova<span class="score">100</span></div>
-        <div class="bottom team"><span class="seed">15</span>UNC Asheville<span class="score">90</span></div>
+    <section id="header">
+      <img id ="madness" src="images/march-madness-logo-2016.png" alt="March Madness">
+    </section>
+    </header>
+    <section id="bracket">
+      <div class="top">
+        <section id="round1">
+          <div class="game" ng-repeat="game in westRound64" ng-cloak>
+            <div class="top team"><span class="seed">{{game.teamOneRank}}</span>{{game.teamOne}}<span ng-class="{'win-icon': game.winner == 1}"></span><span class="score" ng-class="{winner: game.winner == 1, loser: game.winner != 1}">{{game.teamOneScore}}</span></div>
+            <div ng-if="$index % 2 == 0" class="connector"></div>
+            <div class="bottom team"><span class="seed">{{game.teamTwoRank}}</span>{{game.teamTwo}}<span ng-class="{'win-icon': game.winner == 2}"></span><span class="score" ng-class="{winner: game.winner == 2, loser: game.winner != 2, 'win-icon': game.winner == 2}">{{game.teamTwoScore}}</span></div>
+          </div>
+        </section>
       </div>
     </section>
-    <section id="round2">
-      <div class="game">
-        <div class="top team"><span class="seed">1</span>Kansas <span class="score">100</span></div>
-        <div class="connector"></div>
-        <div class="bottom team"><span class="seed">16</span>Austin Peay <span class="score">82</span></div>
-      </div>
-    </section>
-  </div>
-</section>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
       function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
-
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->

@@ -4,6 +4,7 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
 import stylus from 'gulp-stylus';
+import rename from 'gulp-rename';
 import {stream as wiredep} from 'wiredep';
 
 const $ = gulpLoadPlugins();
@@ -13,6 +14,13 @@ gulp.task('stylus', () => {
   return gulp.src('app/styles/main.styl')
     .pipe(stylus())
     .pipe(gulp.dest('app/styles'));
+});
+
+gulp.task('normalize.min', () => {
+    return gulp.src('bower_components/normalize-css/normalize.css')
+      .pipe($.cssnano())
+      .pipe(rename('normalize.min.css'))
+      .pipe(gulp.dest('bower_components/normalize-css'));
 });
 
 gulp.task('styles', () => {

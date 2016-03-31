@@ -1,0 +1,35 @@
+{
+  "west":{
+        "round1":[
+           {
+             "teamOne":"Oregon",
+             "teamTwo":"Holy Cross",
+             "teamOneRank":1,
+             "teamTwoRank":2,
+             "teamOneScore":91,
+             "teamTwoScore":52,
+             "winner":1
+           },
+           {
+             "teamOne":"Saint Joseph",
+             "teamTwo":"Cincinnati",
+             "teamOneRank":8,
+             "teamTwoRank":9,
+             "teamOneScore":78,
+             "teamTwoScore":76,
+             "winner": 1
+           }
+        ],
+        "round2":[
+
+        ]
+    },
+      "east":{
+
+    },
+      "south":{
+
+    },
+      "midwest":{
+    }
+}
