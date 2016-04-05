@@ -5,10 +5,19 @@ import browserSync from 'browser-sync';
 import del from 'del';
 import stylus from 'gulp-stylus';
 import rename from 'gulp-rename';
+import jasmine from 'gulp-jasmine';
 import {stream as wiredep} from 'wiredep';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
+
+
+
+gulp.task('jasmine', () =>
+	gulp.src('test/spec/**/*.js')
+		// gulp-jasmine works on filepaths so you can't have any plugins before it
+		.pipe(jasmine())
+);
 
 gulp.task('stylus', () => {
   return gulp.src('app/styles/main.styl')
@@ -148,7 +157,6 @@ gulp.task('serve:test', ['scripts'], () => {
       }
     }
   });
-
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('test/spec/**/*.js').on('change', reload);
   gulp.watch('test/spec/**/*.js', ['lint:test']);

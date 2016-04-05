@@ -7,23 +7,44 @@
   height 114px
   width auto
   background-color white
+  z-index 2
 //March Madness logo
 #madness
   margin-left auto
   margin-right auto
   display block
+.search-bar
+  display block
+  margin-left auto
+  margin-right auto
+  position relative
+  top 100px
 //Background color for bracket
-section#bracket
+#bracket
   background rgba(105, 105, 105, 0.69)
-#bracket > .top
+.left-round1
   position relative
   display inline-block
-#round1
+  left 20px
   width 241px
   margin 0
   padding 0
-  position relative
-  display inline-block
+.right-round1
+  position: absolute;
+  display: inline-block;
+  right: 20px;
+  width: 241px;
+  margin: 0;
+  padding: 0;
+  top: 144px;
+.lower-right-round1
+  position: absolute;
+  display: inline-block;
+  right: 20px;
+  width: 241px;
+  margin: 0;
+  padding: 0;
+  top: 1192px;
 .game
   border 1px solid black
   width 200px
@@ -31,9 +52,7 @@ section#bracket
   position relative
   background-color white
   border-radius 5px
-#round1 > .game
-  margin-left: 15px
-  margin-top: 50px
+  display inline-block
 .seed
   padding-right 10px
   padding-left 4px
@@ -45,12 +64,12 @@ section#bracket
   position absolute
   right 4px
 //Sets connector for round 1
-#round1 > .game > .connector
+.left-round1 > .game > .connector
   border 1px solid black
   border-left none
   z-index -1
   position absolute
-  height 120px
+  height 130px
   width 230px
   display block
   top 34px

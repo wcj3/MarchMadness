@@ -18,18 +18,289 @@
              "teamOneScore":78,
              "teamTwoScore":76,
              "winner": 1
-           }
-        ],
-        "round2":[
-
+           },
+           {
+              "teamOne":"Baylor",
+              "teamTwo":"Yale",
+              "teamOneRank":5,
+              "teamTwoRank":12,
+              "teamOneScore":75,
+              "teamTwoScore":79,
+              "winner": 2
+            },
+            {
+               "teamOne":"Duke",
+               "teamTwo":"UNCW",
+               "teamOneRank":4,
+               "teamTwoRank":13,
+               "teamOneScore":93,
+               "teamTwoScore":85,
+               "winner": 1
+             },
+             {
+               "teamOne":"Texas",
+               "teamTwo":"UNI",
+               "teamOneRank":6,
+               "teamTwoRank":11,
+               "teamOneScore":72,
+               "teamTwoScore":75,
+               "winner": 2
+             },
+             {
+               "teamOne":"Texas A&M",
+               "teamTwo":"Green Bay",
+               "teamOneRank":3,
+               "teamTwoRank":14,
+               "teamOneScore":92,
+               "teamTwoScore":65,
+               "winner": 1
+             },
+             {
+               "teamOne":"Oregon State",
+               "teamTwo":"VCU",
+               "teamOneRank":7,
+               "teamTwoRank":10,
+               "teamOneScore":67,
+               "teamTwoScore":75,
+               "winner": 2
+             },
+             {
+               "teamOne":"Oklahoma",
+               "teamTwo":"CSU Bakerfield",
+               "teamOneRank":2,
+               "teamTwoRank":15,
+               "teamOneScore":82,
+               "teamTwoScore":68,
+               "winner": 1
+             }
         ]
     },
       "east":{
-
+        "round1":[
+          {
+            "teamOne":"North Carolina",
+            "teamTwo":"FGCU",
+            "teamOneRank":1,
+            "teamTwoRank":16,
+            "teamOneScore":83,
+            "teamTwoScore":67,
+            "winner": 1
+          },
+          {
+            "teamOne":"USC",
+            "teamTwo":"Providence",
+            "teamOneRank":8,
+            "teamTwoRank":9,
+            "teamOneScore":69,
+            "teamTwoScore":70,
+            "winner": 2
+          },
+          {
+            "teamOne":"Indiana",
+            "teamTwo":"Chattanooga",
+            "teamOneRank":5,
+            "teamTwoRank":12,
+            "teamOneScore":99,
+            "teamTwoScore":74,
+            "winner": 1
+          },
+          {
+            "teamOne":"Kentucky",
+            "teamTwo":"Stony Brook",
+            "teamOneRank":4,
+            "teamTwoRank":13,
+            "teamOneScore":85,
+            "teamTwoScore":57,
+            "winner": 1
+          },
+          {
+            "teamOne":"Notre Dame",
+            "teamTwo":"Michigan",
+            "teamOneRank":6,
+            "teamTwoRank":11,
+            "teamOneScore":70,
+            "teamTwoScore":63,
+            "winner": 1
+          },
+          {
+            "teamOne":"West Virginia",
+            "teamTwo":"SFA",
+            "teamOneRank":3,
+            "teamTwoRank":14,
+            "teamOneScore":56,
+            "teamTwoScore":70,
+            "winner": 2
+          },
+          {
+            "teamOne":"Wisconsin",
+            "teamTwo":"Pittsburg",
+            "teamOneRank":7,
+            "teamTwoRank":10,
+            "teamOneScore":47,
+            "teamTwoScore":43,
+            "winner": 1
+          },
+          {
+            "teamOne":"Xavier",
+            "teamTwo":"Weber State",
+            "teamOneRank":2,
+            "teamTwoRank":15,
+            "teamOneScore":71,
+            "teamTwoScore":53,
+            "winner": 1
+          }
+        ]
     },
       "south":{
-
+        "round1": [
+          {
+            "teamOne":"Kansas",
+            "teamTwo":"Austin Peay",
+            "teamOneRank":1,
+            "teamTwoRank":16,
+            "teamOneScore":105,
+            "teamTwoScore":79,
+            "winner": 1
+          },
+          {
+            "teamOne":"Colorado",
+            "teamTwo":"Connecticut",
+            "teamOneRank":8,
+            "teamTwoRank":9,
+            "teamOneScore":67,
+            "teamTwoScore":74,
+            "winner": 2
+          },
+          {
+            "teamOne":"Maryland",
+            "teamTwo":"South Dakoka St.",
+            "teamOneRank":5,
+            "teamTwoRank":12,
+            "teamOneScore":79,
+            "teamTwoScore":74,
+            "winner": 1
+          },
+          {
+            "teamOne":"California",
+            "teamTwo":"Hawaii",
+            "teamOneRank":4,
+            "teamTwoRank":13,
+            "teamOneScore":66,
+            "teamTwoScore":77,
+            "winner": 1
+          },
+          {
+            "teamOne":"Arizona",
+            "teamTwo":"Wichita State",
+            "teamOneRank":6,
+            "teamTwoRank":11,
+            "teamOneScore":55,
+            "teamTwoScore":65,
+            "winner": 2
+          },
+          {
+            "teamOne":"Miami",
+            "teamTwo":"Buffalo",
+            "teamOneRank":3,
+            "teamTwoRank":14,
+            "teamOneScore":79,
+            "teamTwoScore":72,
+            "winner": 1
+          },
+          {
+            "teamOne":"Iowa",
+            "teamTwo":"Temple",
+            "teamOneRank":7,
+            "teamTwoRank":10,
+            "teamOneScore":72,
+            "teamTwoScore":70,
+            "winner": 1
+          },
+          {
+            "teamOne":"Villanova",
+            "teamTwo":"UNC Asheville",
+            "teamOneRank":2,
+            "teamTwoRank":15,
+            "teamOneScore":86,
+            "teamTwoScore":56,
+            "winner": 1
+          }
+        ]
     },
       "midwest":{
+        "round1": [
+          {
+            "teamOne":"Virginia",
+            "teamTwo":"Hampton",
+            "teamOneRank":1,
+            "teamTwoRank":16,
+            "teamOneScore":81,
+            "teamTwoScore":45,
+            "winner": 1
+          },
+          {
+            "teamOne":"Texas Tech",
+            "teamTwo":"Butler",
+            "teamOneRank":8,
+            "teamTwoRank":9,
+            "teamOneScore":61,
+            "teamTwoScore":71,
+            "winner": 2
+          },
+          {
+            "teamOne":"Purdue",
+            "teamTwo":"Little Rock",
+            "teamOneRank":5,
+            "teamTwoRank":12,
+            "teamOneScore":83,
+            "teamTwoScore":85,
+            "winner": 2
+          },
+          {
+            "teamOne":"Iowa State",
+            "teamTwo":"Iona",
+            "teamOneRank":4,
+            "teamTwoRank":13,
+            "teamOneScore":94,
+            "teamTwoScore":81,
+            "winner": 1
+          },
+          {
+            "teamOne":"Seton Hall",
+            "teamTwo":"Gonzaga",
+            "teamOneRank":6,
+            "teamTwoRank":11,
+            "teamOneScore":52,
+            "teamTwoScore":68,
+            "winner": 2
+          },
+          {
+            "teamOne":"Utah",
+            "teamTwo":"Fresno State",
+            "teamOneRank":3,
+            "teamTwoRank":14,
+            "teamOneScore":80,
+            "teamTwoScore":69,
+            "winner": 1
+          },
+          {
+            "teamOne":"Dayton",
+            "teamTwo":"Syracuse",
+            "teamOneRank":7,
+            "teamTwoRank":10,
+            "teamOneScore":51,
+            "teamTwoScore":70,
+            "winner": 2
+          },
+          {
+            "teamOne":"Michigan State",
+            "teamTwo":"Middle Tenn.",
+            "teamOneRank":2,
+            "teamTwoRank":15,
+            "teamOneScore":81,
+            "teamTwoScore":90,
+            "winner": 2
+          }
+        ]
     }
 }

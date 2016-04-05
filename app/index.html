@@ -20,7 +20,7 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-    <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet" type="text/css">
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="scripts/controllers/MarchMadnessCtrl.js"></script>
   </head>
@@ -28,21 +28,48 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <section id="header">
+    <div id="header">
       <img id ="madness" src="images/march-madness-logo-2016.png" alt="March Madness">
-    </section>
-    </header>
-    <section id="bracket">
-      <div class="top">
-        <section id="round1">
-          <div class="game" ng-repeat="game in westRound64" ng-cloak>
+    </div>
+    <div id="bracket">
+      <input class="search-bar" type="text" placeholder=" Jump to a region..">
+      <section id="south region">
+        <div class ="left-round1" id="southRound1">
+          <div class="game south" ng-repeat="game in southRound64" ng-cloak>
             <div class="top team"><span class="seed">{{game.teamOneRank}}</span>{{game.teamOne}}<span ng-class="{'win-icon': game.winner == 1}"></span><span class="score" ng-class="{winner: game.winner == 1, loser: game.winner != 1}">{{game.teamOneScore}}</span></div>
             <div ng-if="$index % 2 == 0" class="connector"></div>
-            <div class="bottom team"><span class="seed">{{game.teamTwoRank}}</span>{{game.teamTwo}}<span ng-class="{'win-icon': game.winner == 2}"></span><span class="score" ng-class="{winner: game.winner == 2, loser: game.winner != 2, 'win-icon': game.winner == 2}">{{game.teamTwoScore}}</span></div>
+            <div class="bottom team"><span class="seed">{{game.teamTwoRank}}</span>{{game.teamTwo}}<span ng-class="{'win-icon': game.winner == 2}"></span><span class="score" ng-class="{winner: game.winner == 2, loser: game.winner != 2}">{{game.teamTwoScore}}</span></div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+      <section id="west region">
+        <div class="left-round1" id="westRound1">
+          <div class="game west" ng-repeat="game in westRound64" ng-cloak>
+            <div class="top team"><span class="seed">{{game.teamOneRank}}</span>{{game.teamOne}}<span ng-class="{'win-icon': game.winner == 1}"></span><span class="score" ng-class="{winner: game.winner == 1, loser: game.winner != 1}">{{game.teamOneScore}}</span></div>
+            <div ng-if="$index % 2 == 0" class="connector"></div>
+            <div class="bottom team"><span class="seed">{{game.teamTwoRank}}</span>{{game.teamTwo}}<span ng-class="{'win-icon': game.winner == 2}"></span><span class="score" ng-class="{winner: game.winner == 2, loser: game.winner != 2}">{{game.teamTwoScore}}</span></div>
+          </div>
+        </div>
     </section>
+    <section id="east region">
+      <div class="right-round1" id="eastRound1">
+        <div class="game east" ng-repeat="game in eastRound64" ng-cloak>
+          <div class="top team"><span class="seed">{{game.teamOneRank}}</span>{{game.teamOne}}<span ng-class="{'win-icon': game.winner == 1}"></span><span class="score" ng-class="{winner: game.winner == 1, loser: game.winner != 1}">{{game.teamOneScore}}</span></div>
+          <div ng-if="$index % 2 == 0" class="connector"></div>
+          <div class="bottom team"><span class="seed">{{game.teamTwoRank}}</span>{{game.teamTwo}}<span ng-class="{'win-icon': game.winner == 2}"></span><span class="score" ng-class="{winner: game.winner == 2, loser: game.winner != 2}">{{game.teamTwoScore}}</span></div>
+        </div>
+      </div>
+  </section>
+  <section id="midwest region">
+    <div class="lower-right-round1" id="midwestRound1">
+      <div class="game midwest" ng-repeat="game in midwestRound64" ng-cloak>
+        <div class="top team"><span class="seed">{{game.teamOneRank}}</span>{{game.teamOne}}<span ng-class="{'win-icon': game.winner == 1}"></span><span class="score" ng-class="{winner: game.winner == 1, loser: game.winner != 1}">{{game.teamOneScore}}</span></div>
+        <div ng-if="$index % 2 == 0" class="connector"></div>
+        <div class="bottom team"><span class="seed">{{game.teamTwoRank}}</span>{{game.teamTwo}}<span ng-class="{'win-icon': game.winner == 2}"></span><span class="score" ng-class="{winner: game.winner == 2, loser: game.winner != 2}">{{game.teamTwoScore}}</span></div>
+      </div>
+    </div>
+</section>
+  </div>
       <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
