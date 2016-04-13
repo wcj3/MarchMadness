@@ -2,10 +2,11 @@
   "name": "marchmadness",
   "private": true,
   "dependencies": {
-    "jquery": "~2.1.1",
+    "jquery": "^2.2.3",
     "modernizr": "~2.8.1",
     "angular": "^1.5.3",
-    "normalize-css": "normalize.css#^4.0.0"
+    "normalize-css": "normalize.css#^4.0.0",
+    "nprogress": "^0.2.0"
   },
   "devDependencies": {
     "jasmine-core": "^2.4.1"

@@ -1,61 +1,123 @@
 //Google font
 //ADD COOL IMAGES AT TOP FOR EACH REGION
 //CSS Color for each school
+//Science And Tech,Holidays,New York,Tool graphics by <a href="http://www.freepik.com/">Freepik</a> from <a href="http://www.flaticon.com/">Flaticon</a> are licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a>
+round2-spacing = 206px
+sweet16-spacing = 302px
+elite8-spacing = 302 + (19671/2)px
+region-top-spacing = 1280px
+region-right-spacing = 20px
+even-point = 48px
 *
   font-family: 'Titillium Web', sans-serif
-#header
+#home
   height 114px
   width auto
   background-color white
-  z-index 2
 //March Madness logo
 #madness
   margin-left auto
   margin-right auto
   display block
-.search-bar
+.match
+  background-color rgb(238, 216, 101)
+//nav styling
+.nav
+  position absolute
+  text-align left
+.round1
+  left 20px
+.round2
+  left 206 + (71/2) px
+.sweet16
+  left 302 + (71/2) px
+.elite8
+  left 600px
+.round1-right
+  right 20px
+  text-align right
+.round2-right
+  right 206 + (71/2)px
+  text-align right
+.sweet16-right
+  right 302 + (71/2)px
+  text-align right
+//
+.button-wrap
+  text-align center
   display block
+  position relative
   margin-left auto
   margin-right auto
+  z-index 2
+  top 180px
+.bracket-nav
+  width 100%
   position relative
-  top 100px
-//Background color for bracket
+  top -70px
 #bracket
-  background rgba(105, 105, 105, 0.69)
-.left-round1
   position relative
-  display inline-block
+  margin-top 150px
+  width 1200px
+  margin 0 auto
+  top 180px
+//Background color for bracket
+body
+  background rgba(105, 105, 105, 0.69)
+.west .round-1, .south .round-1
   left 20px
-  width 241px
+//Round styling
+.region.west
+  top region-top-spacing
+  position absolute
+.region.midwest
+  top region-top-spacing
+  position absolute
+  right 0
+.midwest .round-1
+  right region-right-spacing
+.east .round-1
+  right region-right-spacing
+  position absolute
+#eastRound2, #midwestRound2
+  right round2-spacing !important
+#southRound2, #westRound2
+  left round2-spacing !important
+#eastSweet16, #midwestSweet16
+  right sweet16-spacing !important
+#southSweet16, #westSweet16
+  left sweet16-spacing !important
+#eastElite8, #midwestElite8
+  right elite8-spacing !important
+#southElite8, #westElite8
+  left elite8-spacing !important
+.round
+  position absolute
+  display inline-block
   margin 0
   padding 0
-.right-round1
-  position: absolute;
-  display: inline-block;
-  right: 20px;
-  width: 241px;
-  margin: 0;
-  padding: 0;
-  top: 144px;
-.lower-right-round1
-  position: absolute;
-  display: inline-block;
-  right: 20px;
-  width: 241px;
-  margin: 0;
-  padding: 0;
-  top: 1192px;
+  width 171px
+  top 0
+.round-2
+  top 48px !important;
+.round-2 > .game
+  margin 95.50px  0
+.round-16  > .game
+  margin 269px 0 183px 0
+.round-8 > .game
+  margin 512.50px 0
+//Game styling
 .game
   border 1px solid black
-  width 200px
+  width 169px
   margin 30px 0px
   position relative
   background-color white
   border-radius 5px
   display inline-block
 .seed
-  padding-right 10px
-  padding-left 4px
+  padding-right 3px
+  padding-left 3px
 .team
   padding 5px 0
 .game > .top
@@ -63,21 +125,27 @@
 .score
   position absolute
   right 4px
-//Sets connector for round 1
-.left-round1 > .game > .connector
+//Styling for connectors
+.connector
   border 1px solid black
-  border-left none
-  z-index -1
   position absolute
-  height 130px
-  width 230px
   display block
+  z-index -1
+.south .connector, .west .connector
+  width 185px
+  border-left none
   top 34px
-#round2 > .game
-  position absolute
-  left 246px
-  top 81px
-  z-index 1
+.midwest .connector, .east .connector
+  border-right none
+  width 165px
+  right 20px
+  top 34px
+.round-1 .connector
+  height 130px
+.round-2 .connector
+  height 261px
+.round-16 .connector
+  height 522px
 .winner
   color green
 .loser
@@ -90,5 +158,19 @@
   background-repeat no-repeat
   display inline-block
   vertical-align middle
-  right 43px
+  right 29px
   position absolute
+.region
+  display inline-block
+.round-1
+  margin-bottom 50px
+.region h1
+  display inline
+.south h1
+  color rgb(242, 57, 69)
+.west h1
+  color rgb(0, 131, 226)
+.east h1
+  color rgb(4, 150, 5)
+.midwest h1
+  color rgb(249, 151, 36)
