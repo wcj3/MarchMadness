@@ -5,26 +5,9 @@ MarchMadness.controller('MarchMadnessCtrl', ['$scope','$http','MarchMad', functi
     MarchMadData.then(function(data){
       $scope.Bracket = data;
     });
-    $scope.getPosition = function(){
+    $scope.getPosition = function(event){
       if ($scope.query !== ""){
-      $(document).ready(function(){
-        $(".team-name").each(function(){
-          if ($(this).text().toLowerCase() === $scope.query.toLowerCase()){
-            var pos = $(this).offset();
-            console.log(pos.top);
-            $('html, body').animate({
-              scrollTop: pos.top - 100
-            }, 1000);
-            return false;
-          }
-        });
-      });
-        /*
-        $('html, body').animate({
-          scrollTop: 300
-        }, 1000);
-        return event.preventDefault();
-        */
+        MarchMad.FindTeam(event, $scope.query);
       }
     };
 }]);
@@ -35,5 +18,20 @@ MarchMadness.service('MarchMad',['$http', function($http){
           return response.data;
       });
       return data;
+  };
+
+  //Service to find team in DOM
+  this.FindTeam = function(event, data){
+    if (event.keyCode === 13){
+      $(".team-name").each(function(){
+        if ($(this).text().toLowerCase() === data.toLowerCase()){
+          var pos = $(this).offset();
+          $('html, body').animate({
+            scrollTop: pos.top - 100
+          }, 1000);
+          return false;
+        }
+    });
+    }
   };
 }]);

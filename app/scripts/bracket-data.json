@@ -511,7 +511,8 @@
       "teamTwoRank": 2,
       "teamOneScore": 95,
       "teamTwoScore": 51,
-      "winner": 1
+      "winner": 1,
+      "stage": "Final 4"
     },
     "game2": {
       "teamOne": "UNC",
@@ -520,7 +521,8 @@
       "teamTwoRank": 10,
       "teamOneScore": 83,
       "teamTwoScore": 66,
-      "winner": 1544
+      "winner": 1,
+      "stage": "Final 4"
     },
     "champ": {
       "teamOne": "Villanova",
@@ -529,7 +531,9 @@
       "teamTwoRank": 1,
       "teamOneScore": 77,
       "teamTwoScore": 74,
-      "winner": 1
+      "winner": 1,
+      "stage": "Championship"
+
     }
   }
 }

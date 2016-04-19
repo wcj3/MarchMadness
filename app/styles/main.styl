@@ -4,8 +4,8 @@
 //Science And Tech,Holidays,New York,Tool graphics by <a href="http://www.freepik.com/">Freepik</a> from <a href="http://www.flaticon.com/">Flaticon</a> are licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a>
 round2-spacing = 206px
 sweet16-spacing = 302px
-elite8-spacing = 302 + (19671/2)px
-region-top-spacing = 1280px
+elite8-spacing = 302 + (171/2)px
+region-top-spacing = 1360px
 region-right-spacing = 20px
 even-point = 48px
 *
@@ -24,24 +24,35 @@ even-point = 48px
 //nav styling
 .nav
   position absolute
-  text-align left
+  font-weight bold
+  color white
+.bracket-nav
+  width 100%
+  position relative
+  top -70px
+  height 34px
+.bracket-nav-scroll
+  position fixed !important
+  top 0 !important
+  width 1200px !important
+  z-index 3
+  background rgb(170, 170, 170)
+.bracket-nav-scroll > .nav
+  padding 5px 0
 .round1
-  left 20px
+  left 20px + (71/2) px
 .round2
   left 206 + (71/2) px
 .sweet16
   left 302 + (71/2) px
 .elite8
-  left 600px
+  left 578px
 .round1-right
-  right 20px
-  text-align right
+  right  20px + (71/2) px
 .round2-right
   right 206 + (71/2)px
-  text-align right
 .sweet16-right
   right 302 + (71/2)px
-  text-align right
 //
 .button-wrap
   text-align center
@@ -51,10 +62,6 @@ even-point = 48px
   margin-right auto
   z-index 2
   top 180px
-.bracket-nav
-  width 100%
-  position relative
-  top -70px
 #bracket
   position relative
   margin-top 150px
@@ -63,7 +70,7 @@ even-point = 48px
   top 180px
 //Background color for bracket
 body
-  background rgba(105, 105, 105, 0.69)
+  background rgb(170, 170, 170)
 .west .round-1, .south .round-1
   left 20px
 //Round styling
@@ -106,6 +113,29 @@ body
   margin 269px 0 183px 0
 .round-8 > .game
   margin 512.50px 0
+.final-4
+  top 955.5px
+  left 334px
+  position absolute
+.final-4 > img
+  height 300px
+  width 300px
+  display block
+  margin 0 auto
+.final-4 > .game
+  margin 0 5px
+.final-4 > div + div
+  float right
+.final-4 > div + div > h4, .final-4 > div > h4
+  position: absolute;
+  top: -50px;
+  left: 56px;
+.final-4 > div + div + div > h4
+  position: absolute;
+  top: -50px;
+  left: 38px;
+.final-4 > div + div + div
+  bottom 35px
 //Game styling
 .game
   border 1px solid black
@@ -146,12 +176,29 @@ body
   height 261px
 .round-16 .connector
   height 522px
+.round-8 .connector
+  height 390px
+  border-bottom none
+.west .round-8 .connector, .midwest .round-8 .connector
+  top -356px
+  border-bottom inherit
+  border-top none
 .winner
   color green
 .loser
   color red
 .win-icon
   background url(http://localhost:9000/images/party-emoji.png)
+  height 24px
+  width 24px
+  background-size contain
+  background-repeat no-repeat
+  display inline-block
+  vertical-align middle
+  right 29px
+  position absolute
+.natty
+  background url(http://localhost:9000/images/champ-emoji.png)
   height 24px
   width 24px
   background-size contain

@@ -1,4 +1,5 @@
 <!doctype html>
+<!--hang bracket nav on scroll-->
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8">
@@ -7,21 +8,16 @@
     <title>MarchMadness</title>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
-
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css styles/main.css -->
+    <script src="scripts/vendor/pace.min.js"></script>
+    <link rel="stylesheet" href="styles/pace.css" />
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
     <link rel="stylesheet" href="bower_components/normalize-css/normalize.min.css"/>
-    <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet" type="text/css">
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="scripts/controllers/MarchMadnessCtrl.js"></script>
+    <script src="scripts/main.js"></script>
   </head>
   <body ng-app="MarchMadnessApp" ng-controller="MarchMadnessCtrl">
     <!--[if lt IE 10]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
@@ -29,11 +25,10 @@
       <img id="madness" src="images/march-madness-logo-2016.png" alt="March Madness">
     </header>
     <div class="button-wrap">
-      <input class="search-bar" type="text" placeholder=" Find a team.." ng-model="query">
-      <button name="butt"  ng-click="getPosition()">Find!</button>
+      <input id="query" class="search-bar" type="text" placeholder=" Find a team.." ng-model="query" ng-keyup="getPosition($event)">
     </div>
     <div id="bracket">
-      <div class="bracket-nav">
+      <div class="bracket-nav" id="bracket-guide">
         <div class="round1 nav">1st round</div>
         <div class="round2 nav">2nd round</div>
         <div class="sweet16 nav">Sweet 16</div>
@@ -329,14 +324,28 @@
           </div>
         </div>
       </div>
-      <div class="region">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div class="region final-4">
+        <img src="images/final-4.png" alt="final-4 img" />
+        <div class="game" ng-repeat="game in Bracket.final4" ng-cloak>
+          <h4>{{game.stage}}</h4>
+          <div class="top team" ng-class="{'match': query.toLowerCase() === game.teamOne.toLowerCase()}">
+            <span class="seed">{{game.teamOneRank}}</span>
+            <span class="team-name">{{game.teamOne}}</span>
+            <span ng-class="{'win-icon': game.winner == 1 && game.stage !== 'Championship', 'natty': game.winner == 1 && game.stage === 'Championship'}"></span>
+            <span class="score" ng-class="{winner: game.winner == 1, loser: game.winner != 1}">{{game.teamOneScore}}</span>
+          </div>
+          <div ng-if="$index % 2 == 0" class="connector"></div>
+          <div class="bottom team" ng-class="{'match': query.toLowerCase() === game.teamTwo.toLowerCase()}">
+            <span class="seed">{{game.teamTwoRank}}</span>
+            <span class="team-name">{{game.teamTwo}}</span>
+            <span ng-class="{'win-icon': game.winner == 2 && game.stage !== 'Championship', 'natty': game.winner == 2 && game.stage === 'Championship'}"></span>
+            <span class="score" ng-class="{winner: game.winner == 2, loser: game.winner != 2}">{{game.teamTwoScore}}</span>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script src="scripts/main.js"></script>
     <script>
       (function(b, o, i, l, e, r) {
         b.GoogleAnalyticsObject = l;
@@ -352,13 +361,5 @@
       ga('create', 'UA-XXXXX-X');
       ga('send', 'pageview');
     </script>
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
   </body>
 </html>

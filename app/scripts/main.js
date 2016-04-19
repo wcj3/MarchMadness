@@ -1,10 +1,12 @@
-/*
 $(document).ready(function(){
-    $("button").click(function() {
-          $('html, body').animate({
-            scrollTop: 300
-          }, 1000);
-          return false;
-    });
+  var bracketNavPos = $("#bracket-guide").offset();
+  $(window).scroll(function(){
+    var $bracketNav = $("#bracket-guide");
+    if ($(this).scrollTop() >= bracketNavPos.top){
+      $bracketNav.toggleClass("bracket-nav-scroll", true);
+    }
+    else {
+      $bracketNav.toggleClass("bracket-nav-scroll", false);
+    }
+  });
 });
-*/
