@@ -3,39 +3,42 @@ import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
-import stylus from 'gulp-stylus';
-import rename from 'gulp-rename';
-import jasmine from 'gulp-jasmine';
 import {stream as wiredep} from 'wiredep';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 
-
-gulp.task('jasmine', () =>
-	gulp.src('test/spec/**/*.js')
-		// gulp-jasmine works on filepaths so you can't have any plugins before it
-		.pipe(jasmine())
-);
-
-gulp.task('stylus', () => {
-  return gulp.src('app/styles/main.styl')
-    .pipe(stylus())
-    .pipe(gulp.dest('app/styles'));
+gulp.task('test', function(done) {
+// Be sure to return the stream
+	return gulp.src('./idontexist')
+		.pipe($.plumber())
+  	.pipe($.karma({
+    	configFile: 'karma.conf.js',
+      action: 'run'
+    }))
+    .on('error', function(err) {
+    	// Make sure failed tests cause gulp to exit non-zero
+      throw err;
+    });
 });
+
+gulp.task('autotest', function() {
+  return gulp.watch(['www/js/**/*.js', 'test/spec/*.js'], ['test']);
+});
+
 
 gulp.task('normalize.min', () => {
     return gulp.src('bower_components/normalize-css/normalize.css')
       .pipe($.cssnano())
-      .pipe(rename('normalize.min.css'))
+      .pipe($.rename('normalize.min.css'))
       .pipe(gulp.dest('bower_components/normalize-css'));
 });
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.styl')
     .pipe($.plumber())
-    .pipe(stylus())
+    .pipe($.stylus())
     .pipe($.sourcemaps.init())
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
     .pipe($.sourcemaps.write())
@@ -51,6 +54,17 @@ gulp.task('scripts', () => {
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('.tmp/scripts'))
     .pipe(reload({stream: true}));
+});
+
+gulp.task('scripts:min', () => {
+  return gulp.src('app/scripts/**/*.js')
+		.pipe($.plumber())
+    .pipe($.sourcemaps.init())
+    .pipe($.sourcemaps.write('.'))
+		.pipe($.rename(function(path){
+			path.extname = ".min.js";
+		}))
+    .pipe(gulp.dest('dist/scripts'));
 });
 
 function lint(files, options) {
@@ -74,7 +88,9 @@ gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe($.if('*.js', $.uglify()))
+		.pipe($.if('*.js', $.sourcemaps.init()))
+		.pipe($.if('*.js', $.uglify()))
+		.pipe($.if('*.js', $.sourcemaps.write('.')))
     .pipe($.if('*.css', $.cssnano()))
     .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
@@ -164,7 +180,7 @@ gulp.task('serve:test', ['scripts'], () => {
 
 // inject bower components
 gulp.task('wiredep', () => {
-  gulp.src('app/styles/*.scss')
+  gulp.src('app/styles/*.styl')
     .pipe(wiredep({
       ignorePath: /^(\.\.\/)+/
     }))

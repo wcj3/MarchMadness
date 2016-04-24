@@ -8,24 +8,31 @@ elite8-spacing = 302 + (171/2)px
 region-top-spacing = 1360px
 region-right-spacing = 20px
 even-point = 48px
+nav-width = 73
+app-width = 1200px
 *
   font-family: 'Titillium Web', sans-serif
 #home
   height 114px
   width auto
-  background-color white
 //March Madness logo
 #madness
   margin-left auto
   margin-right auto
   display block
+//
 .match
   background-color rgb(238, 216, 101)
+.match.top
+  border-radius 5px 5px 0 0
+.match.bottom
+  border-radius 0 0 5px 5px
 //nav styling
 .nav
   position absolute
   font-weight bold
-  color white
+  letter-spacing .5px
+  font-size 17px
 .bracket-nav
   width 100%
   position relative
@@ -34,25 +41,27 @@ even-point = 48px
 .bracket-nav-scroll
   position fixed !important
   top 0 !important
-  width 1200px !important
+  width app-width !important
   z-index 3
-  background rgb(170, 170, 170)
+  background black
+  color white
 .bracket-nav-scroll > .nav
   padding 5px 0
+//Round styling
 .round1
-  left 20px + (71/2) px
+  left 20px + ((171 - nav-width) / 2) px
 .round2
-  left 206 + (71/2) px
+  left 206 + ((171 - nav-width) / 2) px
 .sweet16
-  left 302 + (71/2) px
+  left 302 + ((171 - nav-width) / 2) px
 .elite8
   left 578px
 .round1-right
-  right  20px + (71/2) px
+  right  20px + ((171 - nav-width) / 2) px
 .round2-right
-  right 206 + (71/2)px
+  right 206 + ((171 - nav-width) / 2)px
 .sweet16-right
-  right 302 + (71/2)px
+  right 302 + ((171 - nav-width) / 2)px
 //
 .button-wrap
   text-align center
@@ -65,12 +74,19 @@ even-point = 48px
 #bracket
   position relative
   margin-top 150px
-  width 1200px
+  width app-width
   margin 0 auto
   top 180px
+.container
+  background rgba(170, 170, 170, .90)
+  width app-width
+  height 2800px
+  margin 0 auto
+  position relative
 //Background color for bracket
 body
-  background rgb(170, 170, 170)
+  background url(../images/final4.jpg)
+  background-size 2200px 3000px !important
 .west .round-1, .south .round-1
   left 20px
 //Round styling
@@ -160,7 +176,6 @@ body
   border 1px solid black
   position absolute
   display block
-  z-index -1
 .south .connector, .west .connector
   width 185px
   border-left none
@@ -220,4 +235,4 @@ body
 .east h1
   color rgb(4, 150, 5)
 .midwest h1
-  color rgb(249, 151, 36)
+  color rgb(250, 135, 0)

@@ -5,9 +5,7 @@
     "jquery": "^2.2.3",
     "modernizr": "~2.8.1",
     "angular": "^1.5.3",
-    "normalize-css": "normalize.css#^4.0.0"
-  },
-  "devDependencies": {
-    "jasmine-core": "^2.4.1"
+    "normalize-css": "normalize.css#^4.0.0",
+    "PACE": "pace#^1.0.2"
   }
 }
