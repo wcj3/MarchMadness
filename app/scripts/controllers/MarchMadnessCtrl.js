@@ -18,7 +18,7 @@ MarchMadness.controller('MarchMadnessCtrl', ['$scope', '$http', 'MarchMad', func
 MarchMadness.service('MarchMad', ['$http', function($http) {
   "use strict";
   this.getBracketData = function() {
-    var data = $http.get("../bracket-data.json").then(function(response) {
+    var data = $http.get("bracket-data.json").then(function(response) {
       return response.data;
     });
     return data;
